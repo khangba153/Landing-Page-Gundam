@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Landing page trưng bày mô hình Gundam với phong cách futuristic, premium và đậm chất collector.">
+  <title>Gundam Nexus | Premium Model Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="#hero">Gundam Nexus</a>
+        <nav class="main-nav" aria-label="Điều hướng chính">
+          <a href="#featured">Nổi bật</a>
+          <a href="#collections">Bộ sưu tập</a>
+          <a href="#benefits">Lý do chọn</a>
+          <a href="#testimonials">Đánh giá</a>
+        </nav>
+        <a class="button button--primary" href="#cta">Mua ngay</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section" id="hero">
+        <div class="container hero__grid">
+          <div class="hero__cta-cluster" aria-label="Điều hướng nhanh Hero">
+            <h1 class="hero__headline">Gundam Nexus</h1>
+            <p class="hero__cta-meta">Trưng bày chủ lực tuần này · Perfect Grade Highlight</p>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#cta">Mua ngay</a>
+              <a class="button button--secondary" href="#collections">Xem bộ sưu tập</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__showcase-backdrop" aria-hidden="true">
+          <iframe
+            class="hero__showcase-iframe"
+            title="Low Poly - Cybernetic Fenrir Son of Loki"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking
+            execution-while-out-of-viewport
+            execution-while-not-rendered
+            web-share
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            src="https://sketchfab.com/models/04b059ecde0e46f2a2b7c4b62b49a3e3/embed?autostart=1&preload=1&ui_hint=0&scrollwheel=0"
+          ></iframe>
+        </div>
+
+        <div class="hero__showcase-wash" aria-hidden="true"></div>
+      </section>
+
+      <section class="featured section" id="featured">
+        <div class="container">
+          <div class="section-heading product-section__heading">
+            <p class="eyebrow">Phòng trưng bày mẫu</p>
+            <h2>Chọn model và bắt đầu trưng bày ngay.</h2>
+            <p>Chọn model bạn muốn ngắm, xoay 3D tương tác và chốt đơn ngay — tất cả trong cùng một khu vực.</p>
+          </div>
+
+          <div class="product-showroom">
+            <div class="product-showroom__grid-panel">
+              <div class="product-grid" id="product-grid" aria-label="Danh sách mô hình Gundam"></div>
+              <nav class="product-pagination" aria-label="Điều hướng danh sách mô hình">
+                <button class="product-pagination__arrow" id="product-page-prev" type="button" aria-label="Trang trước">&lt;</button>
+                <div class="product-pagination__pages" id="product-pagination-pages" role="list" aria-label="Danh sách trang"></div>
+                <button class="product-pagination__arrow" id="product-page-next" type="button" aria-label="Trang sau">&gt;</button>
+              </nav>
+            </div>
+
+            <aside class="product-preview" id="product-preview" aria-live="polite">
+              <div class="product-preview__frame">
+                <div class="product-preview__glow product-preview__glow--blue"></div>
+                <div class="product-preview__glow product-preview__glow--warm"></div>
+
+                <div class="product-preview__header">
+                  <span>Model đang chọn</span>
+                  <strong id="preview-header-name">Strike Freedom Tinh Vân</strong>
+                </div>
+
+                <div class="product-preview__visual">
+                  <div class="product-preview__stage">
+                    <div class="product-preview__panel-lines"></div>
+                    <div class="product-preview__spotlight"></div>
+
+                    <div class="product-preview__viewer-shell sketchfab-embed-wrapper" id="preview-viewer-shell">
+                      <div class="product-preview__viewer-frame">
+                        <iframe
+                          id="preview-iframe"
+                          class="product-preview__iframe"
+                          title="Mô hình 3D Strike Freedom Tinh Vân"
+                          frameborder="0"
+                          allowfullscreen
+                          mozallowfullscreen="true"
+                          webkitallowfullscreen="true"
+                          allow="autoplay; fullscreen; xr-spatial-tracking"
+                          xr-spatial-tracking
+                          execution-while-out-of-viewport
+                          execution-while-not-rendered
+                          web-share
+                          loading="lazy"
+                          referrerpolicy="strict-origin-when-cross-origin"
+                          src="https://sketchfab.com/models/b480398fadb747d282081b2176794a4b/embed?autostart=1&preload=1&ui_hint=0"
+                        ></iframe>
+                      </div>
+
+                      <p class="product-preview__viewer-hint" id="preview-viewer-hint">
+                        Kéo để xoay mô hình • Cuộn để zoom • Bấm fullscreen để xem toàn màn hình
+                      </p>
+                    </div>
+
+                    <div class="product-preview__image-wrap" id="preview-image-wrap" hidden>
+                      <img
+                        id="preview-image"
+                        class="product-preview__image"
+                        src="./assets/images/inh_gundam_strike_freedom_perfect_grade_chinh_hang_bandai_viet_nam_hcm_b29d06c9d4d14e09b9af6a7d0535af48_grande.jpg"
+                        alt="Mô hình Strike Freedom Tinh Vân"
+                      >
+                    </div>
+
+                    <p class="product-preview__fallback-note" id="preview-fallback-note" hidden>
+                      Chưa có model 3D thật sự khớp trên Sketchfab cho mẫu này. Tạm thời hiển thị ảnh tham chiếu để bạn vẫn xem bố cục trưng bày.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="product-preview__source" id="preview-source">
+                  <span class="product-preview__source-label">Mô hình 3D tương tác</span>
+                  <p class="product-preview__source-text">
+                    <a id="preview-source-model" href="https://sketchfab.com/3d-models/strike-freedom-gundam-b480398fadb747d282081b2176794a4b" target="_blank" rel="nofollow noopener noreferrer">Strike Freedom Gundam</a>
+                    <span> bởi </span>
+                    <a id="preview-source-author" href="https://sketchfab.com/ArnestoBarraca" target="_blank" rel="nofollow noopener noreferrer">512ui3</a>
+                    <span> trên </span>
+                    <a href="https://sketchfab.com" target="_blank" rel="nofollow noopener noreferrer">Sketchfab</a>
+                  </p>
+                </div>
+
+                <div class="product-preview__info">
+                  <span class="product-preview__tag" id="preview-tag">Collector chọn</span>
+                  <h3 id="preview-name">Strike Freedom Tinh Vân</h3>
+                  <p id="preview-description">
+                    Cụm cánh bung rộng, thân giáp sáng và hiệu ứng trưng bày rất mạnh, đủ sức biến mẫu này thành tâm điểm của cả góc bàn.
+                  </p>
+
+                  <div class="product-preview__price-row">
+                    <strong id="preview-price">3.590.000 đ</strong>
+                    <span id="preview-grade">Perfect Grade</span>
+                  </div>
+
+                  <div class="product-preview__meta">
+                    <span id="preview-series">Dáng mở rộng nhiều lớp</span>
+                    <span id="preview-highlight">Độ hiện diện cực mạnh trong tủ kính</span>
+                  </div>
+
+                  <a class="button button--primary product-preview__button" id="preview-buy" href="#cta">Mua ngay</a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="collections section" id="collections">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Các cấp độ sưu tập</p>
+            <h2>Chọn cấp độ phù hợp với cách bạn muốn bắt đầu bộ sưu tập.</h2>
+            <p>Từ bản vào nhanh cho sinh viên mới chơi đến những mẫu lên kệ cực đẹp dành cho người thích trưng bày lâu dài.</p>
+          </div>
+
+          <div class="collection-grid">
+            <article class="info-card">
+              <span class="info-card__label">Khởi động nhanh</span>
+              <h3>Entry Grade</h3>
+              <p>Dễ lắp ráp, chi phí dễ vào và đủ đẹp để bắt đầu bộ sưu tập đầu tiên mà không thấy bị quá tay.</p>
+            </article>
+            <article class="info-card">
+              <span class="info-card__label">Cân bằng đẹp giá</span>
+              <h3>High Grade</h3>
+              <p>Cân bằng rất tốt giữa độ đẹp, mức giá và khả năng lên kệ lâu dài, hợp gu nâng cấp dần từng mẫu.</p>
+            </article>
+            <article class="info-card">
+              <span class="info-card__label">Lên gu collector</span>
+              <h3>Master Grade</h3>
+              <p>Chi tiết sâu, khung xương rõ và cảm giác hoàn thiện đủ mạnh để góc trưng bày nhìn cao cấp hơn hẳn.</p>
+            </article>
+            <article class="info-card">
+              <span class="info-card__label">Tâm điểm showcase</span>
+              <h3>Perfect Grade</h3>
+              <p>Phiên bản dành cho người muốn một mẫu thật sự nổi bật, đặt lên là cả bàn học có cảm giác như showcase riêng.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits section" id="benefits">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Lý do chọn</p>
+            <h2>Lý do khiến fan mecha muốn chốt đơn nhanh hơn.</h2>
+            <p>Không chỉ là mô hình để chơi, đây còn là món trưng bày có khả năng nâng hẳn cảm giác của không gian riêng.</p>
+          </div>
+
+          <div class="benefit-list">
+            <article class="benefit-item">
+              <span class="benefit-item__index">01</span>
+              <h3>Visual lên kệ rất mạnh</h3>
+              <p>Model đặt vào góc học tập hoặc làm việc là có điểm nhấn ngay, không cần thêm quá nhiều đồ trang trí phụ.</p>
+            </article>
+            <article class="benefit-item">
+              <span class="benefit-item__index">02</span>
+              <h3>Phù hợp nhiều ngân sách</h3>
+              <p>Nhiều cấp độ giá để sinh viên dễ bắt đầu, rồi nâng dần lên các mẫu collector mà không bị gãy mạch đam mê.</p>
+            </article>
+            <article class="benefit-item">
+              <span class="benefit-item__index">03</span>
+              <h3>Trải nghiệm lắp ráp đáng nhớ</h3>
+              <p>Cảm giác hoàn thiện từng chi tiết rồi dựng mẫu lên kệ luôn cho một kiểu thỏa mãn rất riêng mà ảnh online không thay thế được.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials section" id="testimonials">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Đánh giá</p>
+            <h2>Cảm nhận từ những người đã bắt đầu bộ sưu tập của mình.</h2>
+            <p>Những chia sẻ từ các bạn đã chọn mẫu và bắt đầu hành trình sưu tầm của riêng mình.</p>
+          </div>
+
+          <div class="testimonial-grid">
+            <blockquote class="quote-card">
+              <span class="quote-card__label">Sinh viên mê mecha</span>
+              <p>"Đặt lên bàn học là thấy cả góc phòng có lực hơn hẳn, nhìn vào là muốn ngồi lại lâu hơn."</p>
+              <footer>Minh Anh, năm 2 CNTT</footer>
+            </blockquote>
+            <blockquote class="quote-card">
+              <span class="quote-card__label">Fan cơ khí chi tiết</span>
+              <p>"Đã nhất là lúc tự ráp xong, chỉnh pose đẹp rồi chụp ảnh. Cảm giác như mình vừa hoàn thiện một món trưng bày thật."</p>
+              <footer>Quốc Huy, sinh viên cơ khí</footer>
+            </blockquote>
+            <blockquote class="quote-card">
+              <span class="quote-card__label">Người mới lên gu collector</span>
+              <p>"Dễ bắt đầu từ bản vừa túi tiền nhưng vẫn có cảm giác premium, nên mua mẫu đầu xong là rất dễ muốn lên thêm mẫu thứ hai."</p>
+              <footer>Thành Đạt, fan mecha</footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta section" id="cta">
+        <div class="container cta__inner">
+          <div class="cta__content">
+            <p class="eyebrow">Sẵn sàng sở hữu</p>
+            <h2>Chốt mẫu đầu tiên và bắt đầu góc trưng bày của riêng bạn.</h2>
+            <p>Bắt đầu bằng một model thật hợp gu, rồi nâng dần bộ sưu tập theo nhịp riêng của bạn. Mỗi mẫu chọn đúng sẽ khiến góc bàn có cá tính hơn rất nhiều.</p>
+          </div>
+
+          <div class="cta__actions">
+            <a class="button button--primary button--large" href="#featured">Mua ngay</a>
+            <a class="button button--secondary button--large" href="#collections">Khám phá bộ sưu tập</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p>© 2026 Gundam Nexus. Landing page concept cho trải nghiệm sưu tầm mô hình Gundam.</p>
+        <a href="#hero">Quay lên đầu trang</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./data/products.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/slider.js"></script>
+  <script src="./js/scroll-effects.js"></script>
+</body>
+</html>

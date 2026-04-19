@@ -1,0 +1,73 @@
+:root {
+  --bg-primary: #f5f9fc;
+  --bg-secondary: #eaf2f9;
+  --surface: rgba(255, 255, 255, 0.9);
+  --surface-strong: #ffffff;
+  --border-soft: rgba(18, 36, 62, 0.12);
+  --text-primary: #121926;
+  --text-secondary: #5b6b84;
+  --accent-blue: #3da8ff;
+  --accent-red: #ff6b6b;
+  --accent-violet: #7f9bff;
+  --accent-glow: rgba(61, 168, 255, 0.22);
+  --shadow-strong: 0 20px 50px rgba(18, 36, 62, 0.12);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --container-width: 1180px;
+  --font-display: "Orbitron", sans-serif;
+  --font-body: "Barlow", sans-serif;
+  --transition-base: 220ms ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background:
+    radial-gradient(circle at top right, rgba(61, 168, 255, 0.16), transparent 28%),
+    radial-gradient(circle at left center, rgba(255, 210, 112, 0.1), transparent 22%),
+    var(--bg-primary);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+p,
+blockquote {
+  margin: 0;
+}
