@@ -1,22 +1,18 @@
 /* Polish motion system: subtle, premium, readable. */
 
-.product-card,
-.product-card__media,
-.product-card__image,
+/* will-change only on interaction, not always */
+.product-card:hover,
+.product-card:focus-visible,
+.button:hover,
+.info-card:hover,
+.benefit-item:hover,
+.quote-card:hover {
+  will-change: transform, box-shadow;
+}
+
 .product-preview__frame,
-.product-preview__visual,
-.product-preview__info,
-.product-preview__viewer-shell,
-.product-preview__iframe,
-.product-preview__source,
-.product-preview__image,
-.button,
-.hero__showcase-image,
-.hero__display-card,
-.info-card,
-.benefit-item,
-.quote-card {
-  will-change: transform, box-shadow, border-color, opacity, filter;
+.product-preview__visual {
+  will-change: auto;
 }
 
 .info-card:hover,
@@ -185,4 +181,30 @@
     transform: none;
     transition: none;
   }
+}
+
+/* ── Smooth Page Swap (product grid) ── */
+
+.product-grid.is-page-switching {
+  animation-duration: 320ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+.product-grid.is-page-switching.is-forward {
+  animation-name: pageSwapForward;
+}
+
+.product-grid.is-page-switching.is-backward {
+  animation-name: pageSwapBackward;
+}
+
+@keyframes pageSwapForward {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pageSwapBackward {
+  0% { opacity: 0; transform: translateY(-12px); }
+  100% { opacity: 1; transform: translateY(0); }
 }

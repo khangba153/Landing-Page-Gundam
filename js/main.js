@@ -7,7 +7,6 @@
   const paginationPages = document.querySelector("#product-pagination-pages");
   const cardStateTimers = new WeakMap();
   const ITEMS_PER_PAGE = 3;
-  const totalPages = Math.max(1, Math.ceil(products.length / ITEMS_PER_PAGE));
 
   if (!grid || !preview || products.length === 0 || !paginationPrev || !paginationNext || !paginationPages) {
     return;
@@ -39,6 +38,15 @@
   let currentPage = 1;
   let previewAnimationTimer = null;
   let pageAnimationTimer = null;
+  let filteredProducts = products.slice();
+
+  function getFilteredProducts() {
+    return filteredProducts;
+  }
+
+  function getTotalPages() {
+    return Math.max(1, Math.ceil(getFilteredProducts().length / ITEMS_PER_PAGE));
+  }
 
   function buildSketchfabAutostartUrl(embedUrl) {
     try {
@@ -77,8 +85,9 @@
   }
 
   function getProductsByPage(page) {
+    const list = getFilteredProducts();
     const startIndex = (page - 1) * ITEMS_PER_PAGE;
-    return products.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+    return list.slice(startIndex, startIndex + ITEMS_PER_PAGE);
   }
 
   function syncCardActiveState() {
@@ -90,8 +99,9 @@
   }
 
   function updatePaginationUi() {
+    const total = getTotalPages();
     paginationPrev.disabled = currentPage <= 1;
-    paginationNext.disabled = currentPage >= totalPages;
+    paginationNext.disabled = currentPage >= total;
 
     paginationPages.querySelectorAll(".product-pagination__page").forEach((pageButton) => {
       const page = Number(pageButton.dataset.page);
@@ -113,7 +123,8 @@
   }
 
   function renderPage(page, options = {}) {
-    const nextPage = Math.min(Math.max(page, 1), totalPages);
+    const total = getTotalPages();
+    const nextPage = Math.min(Math.max(page, 1), total);
     const previousPage = currentPage;
     currentPage = nextPage;
 
@@ -232,16 +243,22 @@
     }
   }
 
-  for (let page = 1; page <= totalPages; page += 1) {
-    const pageButton = document.createElement("button");
-    pageButton.type = "button";
-    pageButton.className = "product-pagination__page";
-    pageButton.dataset.page = String(page);
-    pageButton.setAttribute("role", "listitem");
-    pageButton.setAttribute("aria-label", `Trang ${page}`);
-    pageButton.textContent = String(page);
-    paginationPages.appendChild(pageButton);
+  function rebuildPagination() {
+    paginationPages.innerHTML = '';
+    const total = getTotalPages();
+    for (let page = 1; page <= total; page += 1) {
+      const pageButton = document.createElement("button");
+      pageButton.type = "button";
+      pageButton.className = "product-pagination__page";
+      pageButton.dataset.page = String(page);
+      pageButton.setAttribute("role", "listitem");
+      pageButton.setAttribute("aria-label", `Trang ${page}`);
+      pageButton.textContent = String(page);
+      paginationPages.appendChild(pageButton);
+    }
   }
+
+  rebuildPagination();
 
   grid.addEventListener("pointerdown", (event) => {
     const card = event.target.closest(".product-card");
@@ -303,7 +320,7 @@
   });
 
   paginationNext.addEventListener("click", () => {
-    if (currentPage >= totalPages) {
+    if (currentPage >= getTotalPages()) {
       return;
     }
 
@@ -329,4 +346,17 @@
   preview.dataset.direction = "forward";
   updatePreview(products[0], false);
   renderPage(1, { shouldAnimatePage: false, shouldAnimatePreview: false });
+
+  /* ── Grade Filter Integration ── */
+  document.addEventListener('gradeFilter', (e) => {
+    const grade = e.detail.grade;
+    filteredProducts = grade === 'all' ? products.slice() : products.filter((p) => p.grade === grade);
+    currentPage = 1;
+    rebuildPagination();
+
+    if (filteredProducts.length > 0) {
+      updatePreview(filteredProducts[0], true);
+    }
+    renderPage(1, { shouldAnimatePage: true, shouldAnimatePreview: false });
+  });
 })();
