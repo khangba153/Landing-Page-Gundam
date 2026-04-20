@@ -63,7 +63,7 @@
   function buildCard(product) {
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "product-card";
+    button.className = "product-card" + (product.salePercent ? " product-card--sale" : "");
     button.dataset.productId = product.id;
     button.setAttribute("aria-pressed", "false");
     button.setAttribute("aria-controls", "product-preview");
@@ -130,6 +130,17 @@
 
     const pageProducts = getProductsByPage(currentPage);
     const hasActiveInPage = pageProducts.some((product) => product.id === activeProductId);
+
+    /* Empty state */
+    if (getFilteredProducts().length === 0) {
+      grid.innerHTML = `
+        <div class="product-grid__empty">
+          <span class="product-grid__empty-icon">🔍</span>
+          <span class="product-grid__empty-text">Không tìm thấy sản phẩm cho bộ lọc này.</span>
+        </div>`;
+      updatePaginationUi();
+      return;
+    }
 
     if (!hasActiveInPage && pageProducts.length > 0) {
       const fallbackProduct = pageProducts[0];

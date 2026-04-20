@@ -246,7 +246,7 @@
           </div>
 
           <div class="grade-panels">
-            <article class="grade-panel grade-panel--eg">
+            <article class="grade-panel grade-panel--eg" data-grade="Entry Grade" role="button" tabindex="0">
               <div class="grade-panel__bg">
                 <img src="./assets/images/Hinh-3.png" alt="Entry Grade Gundam" loading="lazy">
               </div>
@@ -258,7 +258,7 @@
                 <h3 class="grade-panel__title">Entry<br>Grade</h3>
               </div>
             </article>
-            <article class="grade-panel grade-panel--hg">
+            <article class="grade-panel grade-panel--hg" data-grade="High Grade" role="button" tabindex="0">
               <div class="grade-panel__bg">
                 <img src="./assets/images/Hinh-4.png" alt="High Grade Gundam" loading="lazy">
               </div>
@@ -270,7 +270,7 @@
                 <h3 class="grade-panel__title">High<br>Grade</h3>
               </div>
             </article>
-            <article class="grade-panel grade-panel--mg">
+            <article class="grade-panel grade-panel--mg" data-grade="Master Grade" role="button" tabindex="0">
               <div class="grade-panel__bg">
                 <img src="./assets/images/Hinh-6.png" alt="Master Grade Gundam" loading="lazy">
               </div>
@@ -282,7 +282,7 @@
                 <h3 class="grade-panel__title">Master<br>Grade</h3>
               </div>
             </article>
-            <article class="grade-panel grade-panel--pg">
+            <article class="grade-panel grade-panel--pg" data-grade="Perfect Grade" role="button" tabindex="0">
               <div class="grade-panel__bg">
                 <img src="./assets/images/Hinh-1.png" alt="Perfect Grade Gundam" loading="lazy">
               </div>
@@ -416,8 +416,8 @@
           </div>
 
           <div class="cta__actions">
-            <a class="button button--primary button--large" href="#featured">Mua ngay</a>
-            <a class="button button--secondary button--large" href="#collections">Khám phá bộ sưu tập</a>
+            <a class="button button--primary button--large button--magnetic" href="#featured">Mua ngay</a>
+            <a class="button button--secondary button--large button--magnetic" href="#collections">Khám phá bộ sưu tập</a>
           </div>
         </div>
       </section>
@@ -432,8 +432,25 @@
     </footer>
 
     <button class="back-to-top" id="back-to-top" type="button" aria-label="Quay lên đầu trang">
+      <svg class="back-to-top__ring" width="50" height="50" viewBox="0 0 50 50" aria-hidden="true">
+        <circle class="ring-bg" cx="25" cy="25" r="22"/>
+        <circle class="ring-progress" id="scroll-ring" cx="25" cy="25" r="22"/>
+      </svg>
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
+
+    <!-- Quick-View Modal -->
+    <div class="quickview-overlay" id="quickview-overlay" aria-hidden="true">
+      <div class="quickview-modal" role="dialog" aria-label="Xem nhanh sản phẩm">
+        <button class="quickview-modal__close" id="quickview-close" type="button" aria-label="Đóng">&times;</button>
+        <div class="quickview-modal__viewer" id="quickview-viewer"></div>
+        <div class="quickview-modal__info">
+          <h3 class="quickview-modal__name" id="quickview-name"></h3>
+          <p class="quickview-modal__desc" id="quickview-desc"></p>
+          <div class="quickview-modal__price" id="quickview-price"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="./data/products.js"></script>

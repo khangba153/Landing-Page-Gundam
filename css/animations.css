@@ -299,6 +299,305 @@
     transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* ── Animated Gradient Border (Sale items) ── */
+
+@keyframes gradientBorderSpin {
+  0%   { --border-angle: 0deg; }
+  100% { --border-angle: 360deg; }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.product-card--sale {
+  border: 2px solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-image:
+    linear-gradient(var(--surface-strong), var(--surface-strong)),
+    conic-gradient(from var(--border-angle), #ff4d4d, #ff6b6b, #ffd56b, #ff4d4d);
+  animation: gradientBorderSpin 3s linear infinite;
+}
+
+[data-theme="dark"] .product-card--sale {
+  background-image:
+    linear-gradient(rgba(14, 18, 26, 0.9), rgba(14, 18, 26, 0.9)),
+    conic-gradient(from var(--border-angle), #ff4d4d, #ff6b6b, #ffd56b, #ff4d4d);
+}
+
+/* ── Staggered Letter Animation for Section Headings ── */
+
+@keyframes letterReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px) rotateX(40deg);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+    filter: blur(0);
+  }
+}
+
+.heading-letter {
+  display: inline-block;
+  animation: letterReveal 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: bottom center;
+}
+
+.heading-letter.is-space {
+  width: 0.3em;
+}
+
+/* ── Cursor Glow Effect ── */
+
+.cursor-glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(circle, var(--glow-color, rgba(61, 168, 255, 0.12)), transparent 70%);
+}
+
+.cursor-glow.is-active {
+  opacity: 1;
+}
+
+/* ── Count-Up Animation ── */
+
+.stat-counting {
+  transition: none;
+}
+
+/* ── Scroll Progress Ring (back-to-top) ── */
+
+.back-to-top__ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+}
+
+.back-to-top__ring circle {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.back-to-top__ring .ring-bg {
+  stroke: var(--border-soft);
+}
+
+.back-to-top__ring .ring-progress {
+  stroke: var(--accent-blue);
+  stroke-dasharray: 138.23;
+  stroke-dashoffset: 138.23;
+  transition: stroke-dashoffset 0.15s ease-out;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+/* ── Quick-View Modal ── */
+
+.quickview-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.quickview-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quickview-modal {
+  position: relative;
+  width: min(90vw, 800px);
+  max-height: 85vh;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(61, 168, 255, 0.14);
+  background: var(--surface-strong);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.quickview-overlay.is-open .quickview-modal {
+  transform: scale(1) translateY(0);
+}
+
+[data-theme="dark"] .quickview-modal {
+  background: #0f1319;
+  border-color: rgba(61, 168, 255, 0.12);
+}
+
+.quickview-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border-soft);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.quickview-modal__close:hover {
+  background: var(--accent-blue);
+  color: #fff;
+  border-color: var(--accent-blue);
+}
+
+.quickview-modal__viewer {
+  width: 100%;
+  height: 50vh;
+  min-height: 300px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.quickview-modal__viewer iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.quickview-modal__info {
+  padding: 24px 28px;
+  overflow-y: auto;
+  max-height: 35vh;
+}
+
+.quickview-modal__name {
+  margin: 0 0 8px;
+  font-family: var(--font-display), var(--font-body), sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.quickview-modal__desc {
+  margin: 0 0 16px;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.quickview-modal__price {
+  font-family: var(--font-display), var(--font-body), sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--accent-blue);
+}
+
+.quickview-modal__price-old {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: line-through;
+  opacity: 0.65;
+  margin-right: 8px;
+}
+
+/* ── Magnetic Button ── */
+
+.button--magnetic {
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 260ms ease;
+}
+
+/* ── Empty State ── */
+
+.product-grid__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px 20px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.product-grid__empty-icon {
+  font-size: 2.4rem;
+  opacity: 0.5;
+}
+
+.product-grid__empty-text {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+/* ── Content Visibility for Off-screen Sections ── */
+
+.benefits,
+.testimonials,
+.cta {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* ── Prefers Reduced Motion ── */
+
+@media (prefers-reduced-motion: reduce) {
+  .cta__big-text,
+  .product-preview__glow,
+  .hero__display-glow,
+  .hero__showcase-image,
+  .product-card--sale {
+    animation: none !important;
+  }
+
+  .heading-letter {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .cursor-glow {
+    display: none !important;
+  }
+
+  .quickview-modal,
+  .quickview-overlay {
+    transition: none !important;
+  }
+
+  .grade-panel,
+  .benefit-strip {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);

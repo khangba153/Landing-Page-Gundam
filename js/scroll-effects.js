@@ -2,8 +2,8 @@
   const SELECTORS = [
     '.section-heading',
     '.product-showroom',
-    '.info-card',
-    '.benefit-item',
+    '.grade-panel',
+    '.benefit-strip',
     '.quote-card',
     '.cta__inner'
   ];
