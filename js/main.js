@@ -75,9 +75,9 @@
         <img class="product-card__image" src="${product.image}" alt="${product.imageAlt}" loading="lazy">
       </span>
       <span class="product-card__body">
-        <span class="product-card__tag">${product.tag}</span>
+        <span class="product-card__tag${product.salePercent ? ' product-card__tag--sale' : ''}">${product.tag}</span>
         <strong class="product-card__name">${product.name}</strong>
-        <span class="product-card__price">${product.priceLabel}</span>
+        <span class="product-card__price">${product.originalPrice ? `<s class="product-card__price-old">${product.originalPrice}</s> ` : ''}${product.priceLabel}</span>${product.salePercent ? `\n        <span class="product-card__sale-badge">-${product.salePercent}%</span>` : ''}
       </span>
     `;
 
@@ -229,7 +229,11 @@
     previewRefs.tag.textContent = product.tag;
     previewRefs.name.textContent = product.name;
     previewRefs.description.textContent = product.description;
-    previewRefs.price.textContent = product.priceLabel;
+    if (product.originalPrice) {
+      previewRefs.price.innerHTML = `<s class="product-preview__price-old">${product.originalPrice}</s> ${product.priceLabel}`;
+    } else {
+      previewRefs.price.textContent = product.priceLabel;
+    }
     previewRefs.grade.textContent = product.grade;
     previewRefs.series.textContent = product.series;
     previewRefs.highlight.textContent = product.highlight;

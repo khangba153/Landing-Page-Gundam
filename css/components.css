@@ -906,6 +906,63 @@
   box-shadow: 0 4px 10px rgba(20, 42, 78, 0.04);
 }
 
+.product-card__tag--sale {
+  background: linear-gradient(135deg, #ff4d4d, #ff6b6b);
+  border-color: rgba(255, 77, 77, 0.3);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 77, 77, 0.2);
+}
+
+[data-theme="dark"] .product-card__tag--sale {
+  background: linear-gradient(135deg, #ff4d4d, #ff6b6b);
+  border-color: rgba(255, 77, 77, 0.4);
+}
+
+.product-card__price-old {
+  color: #8b949e;
+  font-weight: 400;
+  font-size: 0.74rem;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.product-card__sale-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(255, 77, 77, 0.12);
+  color: #ff4d4d;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+[data-theme="dark"] .product-card__sale-badge {
+  background: rgba(255, 77, 77, 0.15);
+  color: #ff6b6b;
+}
+
+/* ── Preview Sale Price ── */
+
+.product-preview__price-old {
+  color: #8b949e;
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-decoration: line-through;
+  opacity: 0.65;
+  margin-right: 8px;
+}
+
+.product-preview__price-row strong {
+  color: #143256;
+}
+
+[data-theme="dark"] .product-preview__price-row strong {
+  color: #ff6b6b;
+}
+
 .product-card__name {
   color: #121926;
   font-size: 0.92rem;
