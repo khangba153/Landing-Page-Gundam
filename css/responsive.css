@@ -1,7 +1,6 @@
 @media (max-width: 1080px) {
   .hero__grid,
   .collection-grid,
-  .benefit-list,
   .testimonial-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -20,7 +19,9 @@
   }
 
   [data-theme="dark"] .hero {
-    background: linear-gradient(180deg, #0d1117 0%, #161b22 100%);
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(61, 168, 255, 0.1), transparent 50%),
+      linear-gradient(180deg, #080b10 0%, #0a0e14 100%);
   }
 
   .hero::after,
@@ -28,9 +29,42 @@
     display: none;
   }
 
-  .hero__cta-cluster {
-    width: max-content;
-    margin: 0;
+  .hero__content {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .hero__big-title {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    font-size: clamp(3rem, 10vw, 6rem);
+    margin: 8px 0 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero__counter {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin: 12px 0 0;
+    justify-content: center;
+  }
+
+  .hero__stats-bar {
+    position: relative;
+    bottom: auto;
+    margin-top: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero__stat {
+    padding: 12px 20px;
   }
 
   .hero__showcase-backdrop {
@@ -71,6 +105,31 @@
 
   .product-card__name {
     font-size: 0.9rem;
+  }
+
+  /* Grade panels: 2 columns on tablet */
+  .grade-panels {
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 600px;
+  }
+
+  .grade-panel__desc {
+    max-height: 60px;
+    opacity: 1;
+  }
+
+  .grade-panel__label {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Benefit strips */
+  .benefit-strip {
+    min-height: 200px;
+  }
+
+  .benefit-strip__index {
+    font-size: clamp(2.5rem, 5vw, 4rem);
   }
 }
 
@@ -143,9 +202,65 @@
     display: flex;
   }
 
-  .collection-grid,
-  .benefit-list {
+  .collection-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Grade panels: 1 column on mobile */
+  .grade-panels {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .grade-panel {
+    min-height: 240px;
+  }
+
+  .grade-panel__desc {
+    max-height: 80px;
+    opacity: 1;
+  }
+
+  .grade-panel__label {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Benefit strips stacked */
+  .benefit-strip__content {
+    padding: 24px 20px;
+    gap: 16px;
+  }
+
+  .benefit-strip__content--right {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .benefit-strip__content--right .benefit-strip__text {
+    order: 0;
+  }
+
+  .benefit-strip:nth-child(even) .benefit-strip__overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(8, 11, 16, 0.88) 0%,
+      rgba(8, 11, 16, 0.6) 40%,
+      rgba(8, 11, 16, 0.3) 100%
+    );
+  }
+
+  .benefit-strip:nth-child(2) .benefit-strip__accent-line {
+    left: 0;
+    right: auto;
+  }
+
+  .benefit-strip {
+    min-height: 200px;
+  }
+
+  .benefit-strip__index {
+    font-size: clamp(2rem, 5vw, 3.5rem);
   }
 
   .hero {
@@ -156,13 +271,29 @@
     font-size: 0.78rem;
   }
 
-  .hero__cta-cluster .button {
+  .hero__content .button {
     min-height: 38px;
     padding: 0 14px;
   }
 
+  .hero__content {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+
   .hero__showcase-backdrop {
     min-height: 360px;
+  }
+
+  .section__vertical-text {
+    display: none;
+  }
+
+  .hero__big-title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
   }
 
   .product-preview__stage {
@@ -171,6 +302,10 @@
 
   .cta__inner {
     padding: 36px 32px;
+  }
+
+  .cta__big-text {
+    font-size: clamp(3rem, 10vw, 6rem);
   }
 
   .product-preview__viewer-shell,
@@ -224,10 +359,15 @@
     padding: 16px 0 0;
   }
 
-  .hero__cta-cluster {
-    width: 100%;
-    max-width: none;
-    padding: 10px;
+  .hero__content {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    max-width: 100%;
+  }
+
+  .hero__content .hero__headline {
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
   }
 
   .hero__actions {
@@ -235,7 +375,7 @@
     gap: 8px;
   }
 
-  .hero__cta-cluster .button {
+  .hero__content .button {
     width: auto;
     min-height: 36px;
   }
@@ -244,6 +384,72 @@
     width: min(calc(100% - 24px), var(--container-width));
     min-height: 260px;
     margin-top: 10px;
+  }
+
+  .hero__big-title {
+    font-size: 2.2rem;
+  }
+
+  .hero__stats-bar {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .hero__stat {
+    padding: 10px 16px;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .hero__counter-current {
+    font-size: 2rem;
+  }
+
+  .section__number {
+    font-size: 2.5rem;
+  }
+
+  /* Grade panels single column */
+  .grade-panels {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .grade-panel {
+    min-height: 200px;
+  }
+
+  .grade-panel__title {
+    font-size: 1.4rem;
+  }
+
+  /* Benefit strips compact */
+  .benefit-strip {
+    min-height: 180px;
+  }
+
+  .benefit-strip__content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 16px;
+    gap: 8px;
+  }
+
+  .benefit-strip__index {
+    font-size: 2rem;
+  }
+
+  .benefit-strip__text h3 {
+    font-size: 1.1rem;
+  }
+
+  .benefit-strip__text p {
+    font-size: 0.84rem;
+  }
+
+  /* CTA */
+  .cta__big-text {
+    font-size: 2.5rem;
   }
 
   .product-showroom__grid-panel,

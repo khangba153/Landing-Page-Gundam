@@ -2,7 +2,7 @@
   /* ── 1. Dark Mode Toggle ── */
   const themeToggle = document.getElementById('theme-toggle');
   const storedTheme = localStorage.getItem('gundam-theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const prefersDark = true;
 
   function setTheme(theme) {
     document.documentElement.dataset.theme = theme;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,15 +51,40 @@
     <main>
       <section class="hero section" id="hero">
         <div class="container hero__grid">
-          <div class="hero__cta-cluster" aria-label="Điều hướng nhanh Hero">
-            <h1 class="hero__headline">Gundam Nexus</h1>
+          <div class="hero__content">
             <p class="hero__cta-meta">Trưng bày chủ lực tuần này · Perfect Grade Highlight</p>
+            <h1 class="hero__headline">Gundam<br>Nexus</h1>
+            <p class="hero__tagline">Premium Model Showcase — Xoay 3D, ngắm chi tiết và chốt đơn ngay.</p>
             <div class="hero__actions">
               <a class="button button--primary" href="#cta">Mua ngay</a>
               <a class="button button--secondary" href="#collections">Xem bộ sưu tập</a>
             </div>
           </div>
+          <div class="hero__counter" aria-hidden="true">
+            <span class="hero__counter-current">01</span>
+            <span class="hero__counter-divider">/</span>
+            <span class="hero__counter-total">09</span>
+          </div>
+          <div class="hero__stats-bar" aria-label="Thông số nổi bật">
+            <div class="hero__stat">
+              <strong>1/60</strong>
+              <span>Tỷ lệ</span>
+            </div>
+            <div class="hero__stat">
+              <strong>30cm</strong>
+              <span>Chiều cao</span>
+            </div>
+            <div class="hero__stat">
+              <strong>420+</strong>
+              <span>Chi tiết</span>
+            </div>
+            <div class="hero__stat">
+              <strong>PG</strong>
+              <span>Cấp độ</span>
+            </div>
+          </div>
         </div>
+        <h2 class="hero__big-title" aria-hidden="true">GUNDAM</h2>
 
         <div class="hero__showcase-backdrop" aria-hidden="true">
           <div class="skeleton-loader" id="hero-skeleton">
@@ -88,8 +113,10 @@
       </section>
 
       <section class="featured section" id="featured">
+        <span class="section__vertical-text" aria-hidden="true">SHOWCASE</span>
         <div class="container">
           <div class="section-heading product-section__heading">
+            <span class="section__number" aria-hidden="true">01</span>
             <p class="eyebrow">Phòng trưng bày mẫu</p>
             <h2>Chọn model và bắt đầu trưng bày ngay.</h2>
             <p>Chọn model bạn muốn ngắm, xoay 3D tương tác và chốt đơn ngay — tất cả trong cùng một khu vực.</p>
@@ -209,90 +236,164 @@
       </section>
 
       <section class="collections section" id="collections">
+        <span class="section__vertical-text" aria-hidden="true">COLLECTION</span>
         <div class="container">
           <div class="section-heading">
+            <span class="section__number" aria-hidden="true">02</span>
             <p class="eyebrow">Các cấp độ sưu tập</p>
             <h2>Chọn cấp độ phù hợp với cách bạn muốn bắt đầu bộ sưu tập.</h2>
             <p>Từ bản vào nhanh cho sinh viên mới chơi đến những mẫu lên kệ cực đẹp dành cho người thích trưng bày lâu dài.</p>
           </div>
 
-          <div class="collection-grid">
-            <article class="info-card">
-              <span class="info-card__label">Khởi động nhanh</span>
-              <h3>Entry Grade</h3>
-              <p>Dễ lắp ráp, chi phí dễ vào và đủ đẹp để bắt đầu bộ sưu tập đầu tiên mà không thấy bị quá tay.</p>
+          <div class="grade-panels">
+            <article class="grade-panel grade-panel--eg">
+              <div class="grade-panel__bg">
+                <img src="./assets/images/Hinh-3.png" alt="Entry Grade Gundam" loading="lazy">
+              </div>
+              <div class="grade-panel__overlay"></div>
+              <div class="grade-panel__accent"></div>
+              <div class="grade-panel__content">
+                <span class="grade-panel__label">Khởi động nhanh</span>
+                <p class="grade-panel__desc">Dễ lắp ráp, chi phí dễ vào và đủ đẹp để bắt đầu bộ sưu tập đầu tiên.</p>
+                <h3 class="grade-panel__title">Entry<br>Grade</h3>
+              </div>
             </article>
-            <article class="info-card">
-              <span class="info-card__label">Cân bằng đẹp giá</span>
-              <h3>High Grade</h3>
-              <p>Cân bằng rất tốt giữa độ đẹp, mức giá và khả năng lên kệ lâu dài, hợp gu nâng cấp dần từng mẫu.</p>
+            <article class="grade-panel grade-panel--hg">
+              <div class="grade-panel__bg">
+                <img src="./assets/images/Hinh-4.png" alt="High Grade Gundam" loading="lazy">
+              </div>
+              <div class="grade-panel__overlay"></div>
+              <div class="grade-panel__accent"></div>
+              <div class="grade-panel__content">
+                <span class="grade-panel__label">Cân bằng đẹp giá</span>
+                <p class="grade-panel__desc">Cân bằng rất tốt giữa độ đẹp, mức giá và khả năng lên kệ lâu dài.</p>
+                <h3 class="grade-panel__title">High<br>Grade</h3>
+              </div>
             </article>
-            <article class="info-card">
-              <span class="info-card__label">Lên gu collector</span>
-              <h3>Master Grade</h3>
-              <p>Chi tiết sâu, khung xương rõ và cảm giác hoàn thiện đủ mạnh để góc trưng bày nhìn cao cấp hơn hẳn.</p>
+            <article class="grade-panel grade-panel--mg">
+              <div class="grade-panel__bg">
+                <img src="./assets/images/Hinh-6.png" alt="Master Grade Gundam" loading="lazy">
+              </div>
+              <div class="grade-panel__overlay"></div>
+              <div class="grade-panel__accent"></div>
+              <div class="grade-panel__content">
+                <span class="grade-panel__label">Lên gu collector</span>
+                <p class="grade-panel__desc">Chi tiết sâu, khung xương rõ và cảm giác hoàn thiện cao cấp hơn hẳn.</p>
+                <h3 class="grade-panel__title">Master<br>Grade</h3>
+              </div>
             </article>
-            <article class="info-card">
-              <span class="info-card__label">Tâm điểm showcase</span>
-              <h3>Perfect Grade</h3>
-              <p>Phiên bản dành cho người muốn một mẫu thật sự nổi bật, đặt lên là cả bàn học có cảm giác như showcase riêng.</p>
+            <article class="grade-panel grade-panel--pg">
+              <div class="grade-panel__bg">
+                <img src="./assets/images/Hinh-1.png" alt="Perfect Grade Gundam" loading="lazy">
+              </div>
+              <div class="grade-panel__overlay"></div>
+              <div class="grade-panel__accent"></div>
+              <div class="grade-panel__content">
+                <span class="grade-panel__label">Tâm điểm showcase</span>
+                <p class="grade-panel__desc">Phiên bản dành cho người muốn một mẫu thật sự nổi bật trong bộ sưu tập.</p>
+                <h3 class="grade-panel__title">Perfect<br>Grade</h3>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
       <section class="benefits section" id="benefits">
+        <span class="section__vertical-text" aria-hidden="true">PREMIUM</span>
         <div class="container">
           <div class="section-heading">
+            <span class="section__number" aria-hidden="true">03</span>
             <p class="eyebrow">Lý do chọn</p>
             <h2>Lý do khiến fan mecha muốn chốt đơn nhanh hơn.</h2>
-            <p>Không chỉ là mô hình để chơi, đây còn là món trưng bày có khả năng nâng hẳn cảm giác của không gian riêng.</p>
           </div>
 
-          <div class="benefit-list">
-            <article class="benefit-item">
-              <span class="benefit-item__index">01</span>
-              <h3>Visual lên kệ rất mạnh</h3>
-              <p>Model đặt vào góc học tập hoặc làm việc là có điểm nhấn ngay, không cần thêm quá nhiều đồ trang trí phụ.</p>
+          <div class="benefit-strips">
+            <article class="benefit-strip">
+              <div class="benefit-strip__bg">
+                <img src="./assets/images/Hinh-5.png" alt="Visual lên kệ" loading="lazy">
+              </div>
+              <div class="benefit-strip__overlay"></div>
+              <div class="benefit-strip__content benefit-strip__content--left">
+                <span class="benefit-strip__index">01.</span>
+                <div class="benefit-strip__text">
+                  <h3>Visual lên kệ rất mạnh</h3>
+                  <p>Model đặt vào góc học tập hoặc làm việc là có điểm nhấn ngay, không cần thêm quá nhiều đồ trang trí phụ.</p>
+                </div>
+              </div>
+              <span class="benefit-strip__accent-line"></span>
             </article>
-            <article class="benefit-item">
-              <span class="benefit-item__index">02</span>
-              <h3>Phù hợp nhiều ngân sách</h3>
-              <p>Nhiều cấp độ giá để sinh viên dễ bắt đầu, rồi nâng dần lên các mẫu collector mà không bị gãy mạch đam mê.</p>
+            <article class="benefit-strip">
+              <div class="benefit-strip__bg">
+                <img src="./assets/images/Hinh-7.png" alt="Phù hợp ngân sách" loading="lazy">
+              </div>
+              <div class="benefit-strip__overlay"></div>
+              <div class="benefit-strip__content benefit-strip__content--right">
+                <span class="benefit-strip__index">02.</span>
+                <div class="benefit-strip__text">
+                  <h3>Phù hợp nhiều ngân sách</h3>
+                  <p>Nhiều cấp độ giá để sinh viên dễ bắt đầu, rồi nâng dần lên các mẫu collector mà không bị gãy mạch đam mê.</p>
+                </div>
+              </div>
+              <span class="benefit-strip__accent-line"></span>
             </article>
-            <article class="benefit-item">
-              <span class="benefit-item__index">03</span>
-              <h3>Trải nghiệm lắp ráp đáng nhớ</h3>
-              <p>Cảm giác hoàn thiện từng chi tiết rồi dựng mẫu lên kệ luôn cho một kiểu thỏa mãn rất riêng mà ảnh online không thay thế được.</p>
+            <article class="benefit-strip">
+              <div class="benefit-strip__bg">
+                <img src="./assets/images/Hinh-9.png" alt="Trải nghiệm lắp ráp" loading="lazy">
+              </div>
+              <div class="benefit-strip__overlay"></div>
+              <div class="benefit-strip__content benefit-strip__content--left">
+                <span class="benefit-strip__index">03.</span>
+                <div class="benefit-strip__text">
+                  <h3>Trải nghiệm lắp ráp đáng nhớ</h3>
+                  <p>Cảm giác hoàn thiện từng chi tiết rồi dựng mẫu lên kệ luôn cho một kiểu thỏa mãn rất riêng mà ảnh online không thay thế được.</p>
+                </div>
+              </div>
+              <span class="benefit-strip__accent-line"></span>
             </article>
           </div>
         </div>
       </section>
 
       <section class="testimonials section" id="testimonials">
+        <span class="section__vertical-text" aria-hidden="true">REVIEWS</span>
         <div class="container">
           <div class="section-heading">
+            <span class="section__number" aria-hidden="true">04</span>
             <p class="eyebrow">Đánh giá</p>
             <h2>Cảm nhận từ những người đã bắt đầu bộ sưu tập của mình.</h2>
-            <p>Những chia sẻ từ các bạn đã chọn mẫu và bắt đầu hành trình sưu tầm của riêng mình.</p>
           </div>
 
           <div class="testimonial-carousel" id="testimonial-carousel">
             <div class="testimonial-grid" id="testimonial-grid">
               <blockquote class="quote-card">
+                <div class="quote-card__accent-bar"></div>
+                <span class="quote-card__big-mark" aria-hidden="true">"</span>
                 <span class="quote-card__label">Sinh viên mê mecha</span>
                 <p>"Đặt lên bàn học là thấy cả góc phòng có lực hơn hẳn, nhìn vào là muốn ngồi lại lâu hơn."</p>
-                <footer>Minh Anh, năm 2 CNTT</footer>
+                <footer>
+                  <strong>Minh Anh</strong>
+                  <span>năm 2 CNTT</span>
+                </footer>
               </blockquote>
               <blockquote class="quote-card">
+                <div class="quote-card__accent-bar"></div>
+                <span class="quote-card__big-mark" aria-hidden="true">"</span>
                 <span class="quote-card__label">Fan cơ khí chi tiết</span>
                 <p>"Đã nhất là lúc tự ráp xong, chỉnh pose đẹp rồi chụp ảnh. Cảm giác như mình vừa hoàn thiện một món trưng bày thật."</p>
-                <footer>Quốc Huy, sinh viên cơ khí</footer>
+                <footer>
+                  <strong>Quốc Huy</strong>
+                  <span>sinh viên cơ khí</span>
+                </footer>
               </blockquote>
               <blockquote class="quote-card">
+                <div class="quote-card__accent-bar"></div>
+                <span class="quote-card__big-mark" aria-hidden="true">"</span>
                 <span class="quote-card__label">Người mới lên gu collector</span>
                 <p>"Dễ bắt đầu từ bản vừa túi tiền nhưng vẫn có cảm giác premium, nên mua mẫu đầu xong là rất dễ muốn lên thêm mẫu thứ hai."</p>
-                <footer>Thành Đạt, fan mecha</footer>
+                <footer>
+                  <strong>Thành Đạt</strong>
+                  <span>fan mecha</span>
+                </footer>
               </blockquote>
             </div>
             <div class="testimonial-dots" id="testimonial-dots" aria-label="Điều hướng đánh giá"></div>
@@ -301,6 +402,12 @@
       </section>
 
       <section class="cta section" id="cta">
+        <span class="section__vertical-text" aria-hidden="true">ORDER</span>
+        <div class="cta__bg-wrap" aria-hidden="true">
+          <img src="./assets/images/Hinh-8.png" alt="" class="cta__bg-img" loading="lazy">
+          <div class="cta__bg-overlay"></div>
+        </div>
+        <h2 class="cta__big-text" aria-hidden="true">ORDER NOW</h2>
         <div class="container cta__inner">
           <div class="cta__content">
             <p class="eyebrow">Sẵn sàng sở hữu</p>
@@ -317,6 +424,7 @@
     </main>
 
     <footer class="site-footer">
+      <div class="site-footer__separator" aria-hidden="true"></div>
       <div class="container site-footer__inner">
         <p>© 2026 Gundam Nexus. Landing page concept cho trải nghiệm sưu tầm mô hình Gundam.</p>
         <a href="#hero">Quay lên đầu trang</a>
