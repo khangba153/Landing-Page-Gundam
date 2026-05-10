@@ -88,6 +88,11 @@
     margin-bottom: 14px;
   }
 
+  .auth-layout {
+    grid-template-columns: minmax(0, 0.85fr) minmax(320px, 430px);
+    gap: 32px;
+  }
+
   .product-preview {
     position: static;
   }
@@ -179,6 +184,43 @@
     padding: 12px 0;
     border-bottom: 1px solid rgba(61, 168, 255, 0.06);
     font-size: 1rem;
+  }
+
+  .main-nav__divider {
+    display: none;
+  }
+
+  .main-nav__auth {
+    width: 100%;
+    margin-top: 8px;
+    padding: 0 14px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .auth-section {
+    align-items: flex-start;
+    padding: 72px 0 88px;
+  }
+
+  .auth-section::before {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.88) 62%, rgba(255, 255, 255, 0.72) 100%),
+      url("../assets/images/Hinh-7.png") center bottom / 480px auto no-repeat;
+  }
+
+  [data-theme="dark"] .auth-section::before {
+    background:
+      linear-gradient(180deg, rgba(8, 11, 16, 0.96) 0%, rgba(8, 11, 16, 0.86) 60%, rgba(8, 11, 16, 0.68) 100%),
+      url("../assets/images/Hinh-7.png") center bottom / 480px auto no-repeat;
+  }
+
+  .auth-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .auth-copy {
+    max-width: 100%;
   }
 
   .main-nav a.is-active::after {
@@ -498,6 +540,32 @@
   .product-card__media {
     width: 54px;
     height: 54px;
+  }
+
+  .auth-section {
+    padding: 56px 0 72px;
+  }
+
+  .auth-card {
+    padding: 24px;
+  }
+
+  .auth-copy h1 {
+    font-size: clamp(2rem, 12vw, 3.2rem);
+  }
+
+  .auth-dashboard__actions,
+  .auth-dashboard__actions .button {
+    width: 100%;
+  }
+
+  .auth-status-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .auth-status-row strong {
+    text-align: left;
   }
 
   .product-card__tag {
